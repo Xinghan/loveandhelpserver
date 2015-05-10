@@ -4,12 +4,12 @@ from rest_framework import serializers
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ('password', 'first_name', 'last_name', 'email')
+        fields = ('password', 'username', 'email')
         write_only_fields = ('password',)
 
     def create(self, validated_data):
-        return User.objects.create(**validated_data)
-    #def restore_object(self, attrs, instance=None):
-       # user = super(UserSerializer, self).restore_object(attrs, instance)
-       # user.set_password(attrs['password'])
-        #return user
+        user = User(email=validated_data['email'], username=validated_data['username'])
+        user.set_password(validated_data['password'])
+        user.save()
+        return user
+

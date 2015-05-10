@@ -37,7 +37,6 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'rest_framework.authtoken',
     'news',
     'userprofile',
     'patient',
@@ -54,17 +53,16 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-REST_FRAMEWORK = {
-    'DEFAULT_PERMISSION_CLASSES': {
-        'rest_framework.permissions.IsAuthenticated',
-    },
-    'DEFAULT_AUTHENTICATION_CLASSES': {
-        'rest_framework.authentication.BasicAuthentication',
-        'rest_framework.authentication.SessionAuthentication',
-        'rest_framework.authentication.TokenAuthentication',
-        'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
-    }
-}
+#REST_FRAMEWORK = {
+#    'DEFAULT_PERMISSION_CLASSES': {
+#        'rest_framework.permissions.IsAuthenticated',
+#    },
+#    'DEFAULT_AUTHENTICATION_CLASSES': {
+#        'rest_framework.authentication.BasicAuthentication',
+#        'rest_framework.authentication.SessionAuthentication',
+#        'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
+#    },
+#}
 
 ROOT_URLCONF = 'proj1.urls'
 

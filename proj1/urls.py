@@ -9,7 +9,6 @@ from django.conf import settings
 router = DefaultRouter()
 router.register(r'entries', news_views.EntryViewSet)
 router.register(r'accounts', account_views.UserView)
-#router.register(r'auths', account_views.AuthView)
 
 urlpatterns = patterns('',
     # Examples:
@@ -18,6 +17,5 @@ urlpatterns = patterns('',
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'^api/', include(router.urls)),
-    url(r'^api-token-auth/', 'rest_framework_jwt.views.obtain_jwt_token'),
-    #url(r'^auth/', account_views.AuthView.as_view(), name='auth-view')
+    url(r'^api-token-auth/', 'rest_framework_jwt.views.obtain_jwt_token')
 )
