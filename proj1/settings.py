@@ -64,6 +64,10 @@ MIDDLEWARE_CLASSES = (
 #    },
 #}
 
+JWT_AUTH = {
+    'JWT_VERIFY_EXPIRATION': False,
+}
+
 ROOT_URLCONF = 'proj1.urls'
 
 WSGI_APPLICATION = 'proj1.wsgi.application'

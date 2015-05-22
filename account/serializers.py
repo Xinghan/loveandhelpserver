@@ -1,10 +1,12 @@
 from django.contrib.auth.models import User
 from rest_framework import serializers
+from patient.models import Patient
 
 class UserSerializer(serializers.ModelSerializer):
+    patients = serializers.PrimaryKeyRelatedField(many=True, queryset=Patient.objects.all())
     class Meta:
         model = User
-        fields = ('password', 'username', 'email')
+        fields = ('password', 'username', 'email', 'patients')
         write_only_fields = ('password',)
 
     def create(self, validated_data):
