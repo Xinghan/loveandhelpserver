@@ -63,6 +63,9 @@ MIDDLEWARE_CLASSES = (
 #        'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
 #    },
 #}
+JWT_AUTH = {
+    'JWT_VERIFY_EXPIRATION': False,
+}
 
 JWT_AUTH = {
     'JWT_VERIFY_EXPIRATION': False,

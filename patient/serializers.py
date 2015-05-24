@@ -5,5 +5,5 @@ class PatientSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Patient
-        resource_name = 'patient'
-        fields = ('id', 'name', 'age', 'birthday', 'owner')
+        fields = ('name', 'age', 'owner')
+        

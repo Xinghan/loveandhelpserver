@@ -9,6 +9,7 @@ from .models import Entry
 from .serializers import EntrySerializer
 
 class EntryViewSet(viewsets.ModelViewSet):
+    import pdb; pdb.set_trace()
     queryset = Entry.objects.order_by('created')
     serializer_class = EntrySerializer
     lookup_field = 'slug'

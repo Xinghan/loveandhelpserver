@@ -18,5 +18,3 @@ class UserView(viewsets.ModelViewSet):
            return (AllowAny(),)
         else:
            return (IsStaffOrTargetUser(),)
-
-class UserDetailView(viewsets.ModelViewSet)

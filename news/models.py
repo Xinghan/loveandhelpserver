@@ -22,4 +22,3 @@ class Entry(models.Model):
         verbose_name = "News Entry"
         verbose_name_plural = "Blog Entries"
         ordering = ["-created"]
-    
