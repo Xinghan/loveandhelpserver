@@ -11,8 +11,11 @@ from .permissions import IsOwner
 class PatientView(viewsets.ModelViewSet):
     permission_classes = (IsAuthenticated, )
     authentication_classes = (JSONWebTokenAuthentication, )
-    queryset = Patient.objects.all()
     serializer_class = PatientSerializer
 
     def get_permissions(self):
         return (IsOwner(), )
+    
+    def get_queryset(self):
+        return Patient.objects.all().filter(owner=self.request.user)
+        

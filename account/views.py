@@ -12,6 +12,7 @@ class UserView(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
     model = User
+    lookup_field = 'username'
 
     def get_permissions(self):
         if self.request.method == 'POST':

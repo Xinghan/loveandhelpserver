@@ -3,10 +3,10 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 class Patient(models.Model):
-    cid = models.IntegerField()
+    cid = models.IntegerField(null=True)
     name = models.CharField(max_length=200);
     age = models.IntegerField();
-    birthday = models.DateField()
+    birthday = models.DateField(null=True)
     owner = models.ForeignKey(User, related_name='patients')
 
     def __str__(self):

@@ -10,7 +10,7 @@ from django.conf import settings
 router = DefaultRouter()
 router.register(r'entries', news_views.EntryViewSet)
 router.register(r'accounts', account_views.UserView)
-router.register(r'patients', patient_views.PatientView)
+router.register(r'patients', patient_views.PatientView, base_name='patient')
 
 urlpatterns = patterns('',
     # Examples:

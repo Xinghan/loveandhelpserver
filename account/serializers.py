@@ -6,7 +6,7 @@ class UserSerializer(serializers.ModelSerializer):
     patients = serializers.PrimaryKeyRelatedField(many=True, queryset=Patient.objects.all())
     class Meta:
         model = User
-        fields = ('password', 'username', 'email', 'patients')
+        fields = ('id', 'password', 'username', 'email')
         write_only_fields = ('password',)
 
     def create(self, validated_data):
@@ -14,4 +14,3 @@ class UserSerializer(serializers.ModelSerializer):
         user.set_password(validated_data['password'])
         user.save()
         return user
-
